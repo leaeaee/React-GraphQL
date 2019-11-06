@@ -1,0 +1,9 @@
+.products-control{
+  text-align: center;
+  padding: 1rem;
+  margin: 8rem auto 0 auto;
+  width: 30rem;
+  max-width: 80%;
+  background-color: white;
+  box-shadow: 5px 10px 8px #888888;
+}

@@ -1,0 +1,122 @@
+*{
+  list-style-type: none;
+}
+
+.toolbar{
+    position: fixed;
+    width: 100%;
+    background: #d8bbbb;
+    height: 56px;
+    top: 0;
+    left: 0;
+}
+
+.toolbar__home a{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.toolbar__home{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.toolbar__navigation{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.spacer{
+    flex: 1;
+}
+.toolbar__search-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.toolbar__search-container button{
+    background: #d8bbbb;
+    border: none;
+    padding-right: 0;
+    padding-left: 0;
+}
+.toolbar__search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+  }
+
+.tooolbar_navigation-items ul,
+.tooolbar_navigation-icons ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.tooolbar_navigation-items li{
+    padding: 0 1rem;
+}
+.tooolbar_navigation-items a{
+    color: white;
+    text-decoration: none;
+}
+.tooolbar_navigation-icons button{
+  color: black;
+  text-decoration: none;
+  background-color: #d8bbbb;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.tooolbar_navigation-icons button:hover{
+  opacity: 0.7;
+}
+.tooolbar_navigation-items li:fourth-child{
+  color: black;
+}
+
+.tooolbar_navigation-items a:hover,
+.tooolbar_navigation-items a:active{
+    color: black;
+}
+
+.tooolbar_navigation-icons li{
+    padding: 0 0.3rem;
+}
+
+.tooolbar_navigation-icons a{
+    background: #d8bbbb;
+    color: black;
+    text-decoration: none;
+
+}
+.tooolbar_navigation-icons i:hover,
+.tooolbar_navigation-icons i:active{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media(max-width: 768px){
+    .tooolbar_navigation-items{
+        display: none
+    }
+    .toolbar__logo a{
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 769px){
+    .toolbar__toggle-button{
+        display: none;
+    }
+    .toolbar__logo{
+        margin-left: 0;
+    }
+}

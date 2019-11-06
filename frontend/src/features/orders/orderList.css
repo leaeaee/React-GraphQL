@@ -1,0 +1,18 @@
+.orders__list{
+  margin: 0 ;
+  padding: 0;
+  width: 40rem;
+  max-width: 90%;
+  align-content: left;
+}
+
+.orders__item{
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+}

@@ -1,0 +1,25 @@
+.cart__list{
+  margin: 0;
+  padding: 0;
+  width: 40rem;
+  max-width: 90%;
+  align-content: left;
+}
+
+.cart__item{
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 5px 10px 8px #888888;
+}
+.cart__list span{
+  color:  #bd8aa3;
+  font-size: 1.5rem;
+}
+.cart__title{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
