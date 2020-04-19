@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './Toolbar.css';
-import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
+import DrawerToggleButton from '../additions/sideDrawer/DrawerToggleButton';
 import AuthContext from '../context/auth-context';
+import * as actionTypes from './redux/actions';
 
 class Toolbar extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class Toolbar extends React.Component {
                     <DrawerToggleButton click={this.props.drawerClickHandler} />
                   </div>
                   <div className="toolbar__home">
-                    <NavLink to="/home" onClick={() => this.props.resetFilters('RESET')}>
+                    <NavLink to="/home" onClick={() => this.props.resetFilters('')}>
                       Home
                     </NavLink>
                   </div>
@@ -35,7 +36,7 @@ class Toolbar extends React.Component {
                             to={f.name}
                             onClick={() => {
                               this.props.handleClick(f.name);
-                              this.props.resetFilters('');
+                              // this.props.resetFilters('');
                             }}
                           >
                             {f.name}
@@ -49,7 +50,11 @@ class Toolbar extends React.Component {
                     <input
                       type="text"
                       placeholder="Search..."
-                      onChange={e => this.props.handleInput(e.target.value.toLowerCase())}
+                      onChange={e => {
+                        this.props.handleInput(e.target.value.toLowerCase());
+                        // this.props.resetFilters(''); //--- još proucit, s ovim i bez ovoga
+                        }
+                      }
                       value={this.props.searchTerm}
                       name="search"
                     ></input>
@@ -101,9 +106,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    resetFilters: reset => dispatch({ type: 'RESET', reset }),
-    handleClick: name => dispatch({ type: 'ADD_NAME', name }),
-    handleInput: term => dispatch({ type: 'ADD_TERM', term })
+    resetFilters: reset => dispatch({ type: actionTypes.RESET, reset }),
+    handleClick: name => dispatch({ type: actionTypes.ADD_NAME, name }),
+    handleInput: term => dispatch({ type: actionTypes.ADD_TERM, term })
   };
 };
 export default connect(

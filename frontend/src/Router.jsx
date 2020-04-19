@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-import CartPage from './pages/CartPage';
-import FavoritePage from './pages/FavoritePage';
-import AuthPage from './pages/AuthPage';
-import Man from './pages/Man';
-import Woman from './pages/Woman';
-import Kids from './pages/Kids';
+import HomePage from './HomePage/HomePage';
+import CartPage from './Toolbar/pages/cartPage/CartPage';
+import FavoritePage from './Toolbar/pages/favoritesPage/FavoritesPage';
+import AuthPage from './Toolbar/pages/profilePages/AuthPage';
+import Man from './Toolbar/pages/filtersPages/Man';
+import Woman from './Toolbar/pages/filtersPages/Woman';
+import Kids from './Toolbar/pages/filtersPages/Kids';
 import AuthContext from './context/auth-context';
 
  const Router = props => (

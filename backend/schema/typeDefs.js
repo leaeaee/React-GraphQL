@@ -74,6 +74,7 @@ const typeDefs = gql`
   }
 
   type Order {
+    _id: ID!
     userId: User!
     products: [Product!]
     carts: [Product!]

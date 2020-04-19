@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { ApolloServer } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const typeDefs = require('./schema/typeDefs.js');
 const resolvers = require('./resolvers/resolvers.js');
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 
+//ne kreira tu novi server, nego kao dodatne opcije servera (dodaje hrpu express middleware)
 const graphqlServer = new ApolloServer({
   typeDefs,
   resolvers,
@@ -48,10 +50,11 @@ const graphqlServer = new ApolloServer({
   }
 });
 
+//primjenjivanje middleware na express, ovo je kao app.use
 graphqlServer.applyMiddleware({ app });
 
 mongoose
-  .connect('mongodb+srv://leaeae:b5aTARQ7QSiq6arm@clusterlea-vmjps.mongodb.net/test?retryWrites=true&w=majority', {
+  .connect(process.env.REACT_APP_MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

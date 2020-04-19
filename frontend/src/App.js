@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Router from './Router';
+import Router from './Router'; 
 import Toolbar from './Toolbar/Toolbar';
-import Footer from './Footer';
-import SideDrawer from './SideDrawer/SideDrawer';
-import Backdrop from './Backdrop/Backdrop';
+import Footer from './Footer/Footer';
+import SideDrawer from './additions/sideDrawer/SideDrawer';
+import Backdrop from './additions/backdrop/Backdrop';
 import AuthContext from './context/auth-context';
 
 class App extends Component {
@@ -27,6 +27,8 @@ class App extends Component {
     window.localStorage.setItem('token', token);
     window.localStorage.setItem('userId', userId);
     window.localStorage.setItem('isAdmin', isAdmin);
+    window.localStorage.setItem('tokenExpiration', tokenExpiration);
+    
   };
 
   logout = () => {
@@ -43,6 +45,11 @@ class App extends Component {
       const userId = window.localStorage.getItem('userId');
       const isAdmin = window.localStorage.getItem('isAdmin');
       this.setState({ token, userId, isAdmin });
+    }
+
+    const tokenExpiration= window.localStorage.getItem('tokenExpiration');
+    if(tokenExpiration > 1){
+      return console.log('Iz App.js tokenExpiration', tokenExpiration)
     }
   }
 
